@@ -1,0 +1,121 @@
+{
+  "name": "web3toolbox",
+  "author": "Aming",
+  "version": "0.1.3",
+  "private": true,
+  "main": "electron.js",
+  "license": "MIT",
+  "homepage": ".",
+  "build": {
+    "appId": "com.example.myapp",
+    "productName": "web3toolbox",
+    "extends": null,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "client/build/**/*",
+      "node_modules/**/*",
+      "client/public/**/*",
+      "electron.js",
+      "preload.js",
+      "server/**/*",
+      "resources/**/*",
+      "package.json",
+      "config.js"
+    ],
+    "extraResources": [
+      {
+        "from": "./assets",
+        "to": "./assets"
+      }
+    ],
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.developer-tools",
+      "icon": "client/build/logo_512x512.png"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "client/build/logo_512x512.png"
+    }
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "async-mutex": "^0.5.0",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "date-and-time": "^3.1.1",
+    "ethers": "^6.11.1",
+    "events": "^3.3.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.18.3",
+    "express-ws": "^5.0.2",
+    "geo-tz": "^8.0.2",
+    "http": "^0.0.1-security",
+    "http-proxy-agent": "^7.0.2",
+    "ip2location-nodejs": "^9.6.1",
+    "nedb": "^1.8.0",
+    "portscanner": "^2.2.0",
+    "proxy-chain": "^2.4.0",
+    "react": "^18.2.0",
+    "react-app-rewired": "^2.2.1",
+    "react-bootstrap": "^2.10.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.71.1",
+    "sass-loader": "^14.1.1",
+    "socket.io-client": "^4.7.4",
+    "socks": "^2.8.1",
+    "socks-proxy-agent": "^8.0.3",
+    "url": "^0.11.3",
+    "axios": "^1.6.8",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "dev": "electron .",
+    "dist": "electron-builder",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build --port 30001",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "pack": "electron-builder --dir"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "customize-cra": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "electron": "^29.0.1",
+    "electron-builder": "^24.12.0",
+    "electron-is-dev": "^3.0.1"
+  },
+  "proxy": "http://localhost:30001"
+}
